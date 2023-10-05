@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' sans-serif;
+}
+
+body {
+    background-color: #FAFBFD;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-left: 720px;
+}
+
+/*.container-box {
+    border: 1px solid red;
+}
+*/
+h1 {
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid rgb(143, 141, 141);
+    outline: none;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-left: 29px;
+    left: 8px;
+}
+
+.icon {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.input-box input:focus {
+    border: 1px solid #0b40d3;
+}
+
+.container-box button {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+#settings-create a {
+    cursor: pointer;
+    color: #89898a;
+}
+
+#settings-create a:hover {
+    color: #0b40d3;
+}
+
+.container-box .remember-me {
+    margin-right: 0px;
+    cursor: pointer;
+}
+
+.container-box .remember-me-span {
+    cursor: pointer;
+}
+
+.logo-site {
+    width: 120px;
+}
+
+.image-bf {
+    position: absolute;
+    height: 100%;
+}
