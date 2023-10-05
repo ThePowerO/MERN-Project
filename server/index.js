@@ -8,3 +8,5 @@ mongoose.connect(process.env.MONGO_URL)
 .catch((err) => console.log("Can not connect to database", err))
 
 const app = express();
+
+app.use('/', require('./routes/authRoutes'))
