@@ -5,19 +5,37 @@ import ImageL from './assets/img/Site-logo.png';
 import ImageBG from './assets/img/BF-BG.png';
 import './Login.css'
 import { Link } from 'react-router-dom';
-import axios from 'axios'
-
+import { toast } from 'react-hot-toast';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
+    const navigate = useNavigate();
     const [data, setData] = useState({
         email: '',
         password: '',
     })
 
-    const loginUser = (e) => {
+    const loginUser = async (e) => {
         e.preventDefault()
-        axios.get('/')
+
+        const {email, password} = data
+        try {
+            const {data} = await axios.post('/login', {
+                email,
+                password
+            })
+
+            if(data.error) {
+                toast.error(data.error)
+            } else {
+                setData({})
+                navigate('/dashboard')
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
   return (
@@ -30,13 +48,13 @@ export default function Login() {
                     <h1>Login</h1>
                     <div className='input-box'>
                         <span className='icon'><i className="bi bi-envelope"></i></span>
-                        <input type="email" name='email' placeholder='Email' required
+                        <input type="email" name='email' placeholder='Email'
                         value={data.email} onChange={(e) => setData({...data, email: e.target.value})}
                         />
                     </div>
                     <div className='input-box'>
                         <span className='icon'><i className="bi bi-key"></i></span>
-                        <input type="password" name='password' placeholder='Password' required
+                        <input type="password" name='password' placeholder='Password'
                         value={data.password} onChange={(e) => setData({...data, password: e.target.value})}
                         />
                     </div>
