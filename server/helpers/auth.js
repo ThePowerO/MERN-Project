@@ -13,3 +13,4 @@ const hashPassword = (password) => {
                 resolve(hash)
             })
         })
+    })
