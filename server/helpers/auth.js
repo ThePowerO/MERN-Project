@@ -10,3 +10,4 @@ const hashPassword = (password) => {
                 if(err) {
                     reject(err)
                 }
+                resolve(hash)
