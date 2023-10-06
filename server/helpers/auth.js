@@ -17,3 +17,4 @@ const hashPassword = (password) => {
 }
 
 const comparePassword = (password, hashed) => {
+    return bcrypt.compare(password, hashed)
