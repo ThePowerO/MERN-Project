@@ -15,3 +15,5 @@ const hashPassword = (password) => {
         })
     })
 }
+
+const comparePassword = (password, hashed) => {
