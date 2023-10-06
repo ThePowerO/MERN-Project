@@ -7,3 +7,4 @@ const hashPassword = (password) => {
                 reject(err)
             }
             bcrypt.hash(password, salt, (err, hash) => {
+                if(err) {
